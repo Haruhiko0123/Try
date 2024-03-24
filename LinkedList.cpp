@@ -9,7 +9,6 @@ template<typename T> LinkedList<T>::LinkedList(){
     count = 0;
     start = NULL;
     end = NULL;
-               ///This is what I forgot
 }
 
 template<typename T>void LinkedList<T>::addItem(T item){
@@ -89,31 +88,34 @@ template<typename T>T LinkedList<T>::pop(){
     if(count == 0){
         throw out_of_range("Out of Range");
     }
-    else if(count ==1){}
+    else if(count ==1){
         value = end->value;
         delete end;
         start = NULL;
         end = NULL;
     }
-    else {
-            node<T> *p = start;
-            while (p->next != end) {
-                p = p->next;
-            }
-            value = end->value;
-            delete end;
-            end = p;
-            end->next = nullptr;
+    else{
+        node<T> *p = start;
+        while (p->next != end){
+            p = p->next;
+        }
+        value = end->value;
+        delete end;
+        end = p;
+        end->next = NULL;
     }
-    count--;
+    
+    count --;
     return value;
 
 
+};
+
+
+
+
+template<typename T>
+T LinkedList::pop(int index){
+    
 }
-
-
-
-
-
-// int pop(LinkedList &ll, int index);
 // void remove(LinkedList &ll, int item);
