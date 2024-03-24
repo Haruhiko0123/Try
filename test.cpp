@@ -14,18 +14,18 @@ int main(){
 
     cout << "Creating a list of integers" <<endl;
     
-    for (int i = 0; i <5; i++){
-        myList.addItem(i);
-    }
-    cout << "List contains values 0 through 4" <<endl;
-    myList.printList();
+    // for (int i = 0; i <5; i++){
+    //     myList.addItem(i);
+    // }
+    // cout << "List contains values 0 through 4" <<endl;
+    // myList.printList();
 
-    cout << "Removing Elements" <<endl;
-    for (int i = 0; i <5; i++){
-        cout << myList.pop();
-    }
-    cout << "List is empty" <<endl;
-    myList.printList();
+    // cout << "Removing Elements" <<endl;
+    // for (int i = 0; i <5; i++){
+    //     cout << myList.pop();
+    // }
+    // cout << "List is empty" <<endl;
+    // myList.printList();
 
     // cout << "Inserting at end";
     //  for (int i = 0; i <5; i++){
@@ -93,4 +93,4 @@ int main(){
     // myStringList.remove("really");
     // myStringList.printList();
 	return 0;
- }
+}

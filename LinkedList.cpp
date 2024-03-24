@@ -84,18 +84,30 @@ template<typename T>void LinkedList<T>::insertItem(T item, int index){
     count++;
 
 };
-template<typename T>T LinkedList<T> :: pop(){
-    int lastCount;
-    T result;
+template<typename T>T LinkedList<T>::pop(){
+    T value;
     if(count == 0){
         throw out_of_range("Out of Range");
     }
-    else{
-        lastCount = count -1;
-        for(int i = 0; i = lastCount; i++){
-            
-        }
+    else if(count ==1){}
+        value = end->value;
+        delete end;
+        start = NULL;
+        end = NULL;
     }
+    else {
+            node<T> *p = start;
+            while (p->next != end) {
+                p = p->next;
+            }
+            value = end->value;
+            delete end;
+            end = p;
+            end->next = nullptr;
+    }
+    count--;
+    return value;
+
 
 }
 
