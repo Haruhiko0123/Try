@@ -11,7 +11,7 @@ struct node {
 template<typename T>
 class LinkedList{
     public:
-        initialize();
+        LinkedList();
         void addItem(T item);
         void printList();
         T getItem(int index);
@@ -19,12 +19,13 @@ class LinkedList{
         T pop();
         T pop(int index);
         void remove(T item);
+        void insert(T item, int location);
     private:
-        T count;
+        int count;
         node<T> *start;
         node<T> *end;
 
-}
+};
 
 
 #include "LinkedList.cpp"
