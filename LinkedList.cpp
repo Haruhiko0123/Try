@@ -116,6 +116,66 @@ template<typename T>T LinkedList<T>::pop(){
 
 template<typename T>
 T LinkedList::pop(int index){
+    if (index < 0 || index >= count){
+        throw out_of_range("Out of Range")
+    }
     
+    if (count == 1){
+        delete start;
+        start = NULL;
+        end = NULL;
+    }
+    else if(index == 0){
+        node<T>* temp = start;
+        start = start->next;
+        delete temp;
+    }
+    else{
+        node<T>* prev = start;
+        for(int i = 0;i < index -1; ++i){
+            prev = prev->next;
+        }
+        node<T>* temp = prev->next:
+        prev->next = temp->next;
+        delete temp;
+        if (index == count -1){
+            end = prev;
+        }
+    }
+    count --;
 }
-// void remove(LinkedList &ll, int item);
+
+template<typename T>
+void LinkedList::remove(int item){
+    if (count == 0){
+        cout <<"The list is empty"<<endl;
+    }
+    if(start->value == item){
+        node<T>* temp = start;
+        start start->next;
+        delete temp;
+        if(count == 1){
+            end = NULL;
+        }
+        count--;
+        return;
+    }
+
+    node<T>* prev = start;
+    node<T>* corrent = start->next;
+
+    while(current != NULL && current->value != item){
+        prev = current;
+        current = current->next;
+    }
+
+    if(current != NULL){
+        prev->next = current->next;
+        delete current;
+        if(prev->next == NULL){
+            end = prev;
+        }
+        count --;
+    }
+
+}
